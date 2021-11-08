@@ -22,7 +22,6 @@ def new_vendor():
 # create the new product and add to database
 @vendors_blueprint.route("/vendors", methods=["POST"])
 def add_vendor():
-    print("\n\n\n\n\n\n\n\n\n\nREQUEST FORM :", request.form)
     name = request.form["name"]
     if "active" in request.form:
         active = True
@@ -30,4 +29,25 @@ def add_vendor():
         active = False
     vendor = Vendor(name, active)
     vendor_repository.save(vendor)
+    return redirect("/vendors")
+
+# action: edit
+# display edit product page
+@vendors_blueprint.route("/vendors/<id>/edit", methods=["GET"])
+def edit_vendor(id):
+    vendor = vendor_repository.select_by_id(id)
+    print("VENDOR FROM SELCT CONTROLLER: ", vendor.__dict__)
+    return render_template("vendors/edit.html", vendor=vendor)
+
+# action: update
+# update the product on the databse
+@vendors_blueprint.route("/vendors/<id>", methods=["POST"])
+def update_vendor(id):
+    name = request.form["name"]
+    if "active" in request.form:
+        active = True
+    else:
+        active = False
+    vendor = Vendor(name, active, id)
+    vendor_repository.update(vendor)
     return redirect("/vendors")

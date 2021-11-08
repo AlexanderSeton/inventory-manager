@@ -10,7 +10,7 @@ Vendors List
         </tr>
         {%for vendor in all_vendors%}
         <tr>
-            <td class="vendors-td">{{vendor.name}}</td>
+            <td class="vendors-td"><a href="/vendors/{{vendor.id}}/edit">{{vendor.name}}</a></td>
             <td class="vendors-td">{{vendor.active}}</td>
         </tr>
         {%endfor%}

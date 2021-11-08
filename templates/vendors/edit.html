@@ -1,0 +1,25 @@
+{%extends "base.html"%}
+{%block content%}
+
+<form action="/vendors/{{vendor.id}}" method="post">
+
+    <p>{{vendor.name}}</p>
+
+  <div>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" value="{{vendor.name}}" required autofocus>
+  </div>
+
+  <div>
+    <label for="active">Currently Active:</label>
+    <input type="checkbox" id="active" name="active" 
+    {%if vendor.active == True%}checked{%endif%}>
+  </div>
+
+    <div>
+        <button type="submit">Update Vendor</button>
+    </div>
+
+</form>
+
+{%endblock%}

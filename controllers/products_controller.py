@@ -46,7 +46,6 @@ def edit_product(id):
 # update the product on the databse
 @products_blueprint.route("/products/<id>", methods=["POST"])
 def update_product(id):
-    print("\n\n\nID:", id)
     name = request.form["name"]
     description = request.form["description"]
     stock_quantity = request.form["stock_quantity"]
