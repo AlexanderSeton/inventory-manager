@@ -2,7 +2,6 @@ import unittest
 from models.product import Product
 
 class TestProduct(unittest.TestCase):
-
     def setUp(self):
         self.product1 = Product("product1", "Test product", 120, 2.50, 3.75)
     
