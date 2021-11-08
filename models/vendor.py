@@ -3,10 +3,6 @@ class Vendor:
         self.name = name
         self.active = active
         self.id = id
-        self.products = []
-
-    def add_product(self, product):
-        self.products.append(product)
 
     def check_active(self):
         if self.active:
