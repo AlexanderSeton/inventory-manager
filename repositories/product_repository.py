@@ -16,7 +16,7 @@ def select_by_id(id):
     results = run_sql(sql, values)[0]
     if results is not None:
         vendor = vendor_repository.select_by_id(results["vendor_id"])
-        product = Product(results["name"], results["description"], results["stock_quantity"], results["buying_cost"], results["selling_price"], vendor)
+        product = Product(results["name"], results["description"], results["stock_quantity"], results["buying_cost"], results["selling_price"], vendor, results["id"])
     return product
 
 def select_all():
@@ -39,6 +39,6 @@ def delete_all():
     run_sql(sql)
 
 def update(product):
-    sql = "UPDATE products SET (name, description, stock_quantity, buying_cost, selling_price, vendor_id) VALUES (%s, %s, %s, %s, %s, %s) WHERE id = %s"
-    values = [product.name, product.description, product.stock_quantity, product.buying_cost, product.selling_price, product.vendor.id]
+    sql = "UPDATE products SET (name, description, stock_quantity, buying_cost, selling_price, vendor_id) = (%s, %s, %s, %s, %s, %s) WHERE id = %s"
+    values = [product.name, product.description, product.stock_quantity, product.buying_cost, product.selling_price, product.vendor.id, product.id]
     run_sql(sql, values)

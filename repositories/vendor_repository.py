@@ -37,6 +37,6 @@ def delete_all():
     run_sql(sql)
 
 def update(vendor):
-    sql = "UPDATE vendors SET (name, active) VALUES (%s, %s) WHERE id = %s"
+    sql = "UPDATE vendors SET (name, active) = (%s, %s) WHERE id = %s"
     values = [vendor.name, vendor.active, vendor.id]
     run_sql(sql, values)
