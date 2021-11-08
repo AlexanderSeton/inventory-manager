@@ -17,8 +17,8 @@ Products List
             <td class="inventory-td"><a href="/products/{{product.id}}/edit">{{product.name}}</a></td>
             <td class="inventory-td">{{product.description}}</td>
             <td class="inventory-td" 
-            {%if product.stock_quantity == 0%}style="background-color: red"
-            {%elif product.stock_quantity <= 10%}style="color: red"
+            {%if product.stock_quantity == 0%} style="background-color: red"
+            {%elif product.stock_quantity <= 10%} style="color: red"
             {%endif%}>
             {{product.stock_quantity}}</td>
             <td class="inventory-td">{{product.buying_cost}}</td>
