@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <title>{{heading}} - Inventory Manager</title>
+</head>
+<body>
+  <header>
+    <h1>Inventory Manager</h1>
+    <h2>{{heading}}</h2>
+    <nav>
+      <ul>
+        <li><a href="/">Dashboard</a></li>
+        <li><a href="/products">Inventory</a></li>
+        <li><a href="/vendors">Vendors</a></li>
+        <li><a href="/products/new">Add Product</a></li>
+        <li><a href="/vendors/new">Add Vendor</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div>
+    {%block content%}
+    {%endblock%}
+  </div>
+</body>
+</html>

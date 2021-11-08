@@ -1,0 +1,28 @@
+{%extends "base.html"%}
+{%block content%}
+
+Products List
+<div>
+    <table class="inventory-table">
+        <tr>
+            <th class="inventory-th">Name</th>
+            <th class="inventory-th">Description</th>
+            <th class="inventory-th">Stock Quantity</th>
+            <th class="inventory-th">Buying Cost (£)</th>
+            <th class="inventory-th">Selling Price (£)</th>
+            <th class="inventory-th">Vendor Name</th>
+        </tr>
+        {%for product in all_products%}
+        <tr>
+            <td class="inventory-td">{{product.name}}</td>
+            <td class="inventory-td">{{product.description}}</td>
+            <td class="inventory-td">{{product.stock_quantity}}</td>
+            <td class="inventory-td">{{product.buying_cost}}</td>
+            <td class="inventory-td">{{product.selling_price}}</td>
+            <td class="inventory-td">{{product.vendor.name}}</td>
+        </tr>
+        {%endfor%}
+    </table>
+</div>
+
+{%endblock%}

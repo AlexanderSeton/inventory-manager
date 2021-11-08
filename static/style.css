@@ -1,0 +1,25 @@
+.inventory-table {
+    border: 1px solid black;
+    width: 90%;
+}
+
+.inventory-th {
+    border: 1px solid black;
+}
+
+.inventory-td {
+    border: 1px solid black;
+}
+
+.vendors-table {
+    border: 1px solid black;
+    width: 50%;
+}
+
+.vendors-th {
+    border: 1px solid black;
+}
+
+.vendors-td {
+    border: 1px solid black;
+}
