@@ -1,9 +1,11 @@
 import unittest
 from models.product import Product
+from models.vendor import Vendor
 
 class TestProduct(unittest.TestCase):
     def setUp(self):
-        self.product1 = Product("product1", "Test product", 120, 2.50, 3.75)
+        self.vendor1 = Vendor("vendor1")
+        self.product1 = Product("product1", "Test product", 120, 2.50, 3.75, self.vendor1)
     
     def test_product_has_name(self):
         self.assertEqual("product1", self.product1.name)
@@ -19,6 +21,9 @@ class TestProduct(unittest.TestCase):
 
     def test_product_has_selling_cost(self):
         self.assertEqual(3.75, self.product1.selling_price)
+
+    def test_product_has_vendor(self):
+        self.assertEqual("vendor1", self.product1.vendor.name)
 
     def test_product_has_id(self):
         self.assertEqual(None, self.product1.id)
