@@ -1,6 +1,6 @@
 .inventory-table {
     border: 1px solid black;
-    width: 90%;
+    width: 100%;
 }
 
 .inventory-th {
@@ -23,12 +23,12 @@
 }
 
 .inventory-select-vendor-select {
-    width: 6%;
+    width: 13%;
 }
 
 .vendors-table {
     border: 1px solid black;
-    width: 50%;
+    width: 55%;
 }
 
 .vendors-th {
