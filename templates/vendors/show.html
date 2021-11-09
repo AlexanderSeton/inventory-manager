@@ -1,7 +1,21 @@
 {%extends "base.html"%}
 {%block content%}
 
-Products List
+Vendor
+<div>
+    <table class="vendors-table">
+        <tr class="vendor-tr">
+            <th class="vendors-th">Name</th>
+            <th class="vendors-th">Active</th>
+        </tr>
+        <tr class="vendors-tr">
+            <td class="vendors-td"><a href="/vendors/{{vendor.id}}/edit" class="vendors-link">{{vendor.name}}</a></td>
+            <td class="vendors-td">{{vendor.active}}</td>
+        </tr>
+    </table>
+</div>
+<br>
+Products
 <div>
     <table class="inventory-table">
         <tr class="inventory-tr">
@@ -11,18 +25,9 @@ Products List
             <th class="inventory-th">Buying Cost /unit (£)</th>
             <th class="inventory-th">Selling Price /unit (£)</th>
             <th class="inventory-th">Markup (%)</th>
-            <th class="inventory-th">Vendor
-
-            <select name="select_vendor" class="inventory-select-vendor-select" onchange="location=this.value;">
-                <option value=""></option>
-                {%for vendor in all_vendors%}
-                    <option value="/vendors/{{vendor.id}}">{{vendor.name}}</a></option>
-                {%endfor%}
-            </select>    
-            
-            </th>
+            <th class="inventory-th">Vendor</th>
         </tr>
-        {%for product in all_products%}
+        {%for product in vendor_products%}
         <tr class="inventory-tr">
             <td class="inventory-td"><a href="/products/{{product.id}}/edit" class="inventory-link">{{product.name}}</a></td>
             <td class="inventory-td">{{product.description}}</td>

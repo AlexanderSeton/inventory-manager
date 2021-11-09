@@ -42,3 +42,14 @@ def update(product):
     sql = "UPDATE products SET (name, description, stock_quantity, buying_cost, selling_price, vendor_id) = (%s, %s, %s, %s, %s, %s) WHERE id = %s"
     values = [product.name, product.description, product.stock_quantity, product.buying_cost, product.selling_price, product.vendor.id, product.id]
     run_sql(sql, values)
+
+def select_all_by_vendor_id(vendor_id):
+    products = []
+    sql = "SELECT * FROM products WHERE vendor_id = %s"
+    values = [vendor_id]
+    results = run_sql(sql, values)
+    for row in results:
+        vendor = vendor_repository.select_by_id(row["vendor_id"])
+        product = Product(row["name"], row["description"], row["stock_quantity"], row["buying_cost"], row["selling_price"], vendor, row["id"])
+        products.append(product)
+    return products

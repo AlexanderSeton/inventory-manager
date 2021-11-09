@@ -11,7 +11,8 @@ products_blueprint = Blueprint("products", __name__)
 @products_blueprint.route("/products", methods=["GET"])
 def products():
     all_products = product_repository.select_all()
-    return render_template("products/index.html", heading="Inventory", all_products=all_products)
+    all_vendors = vendor_repository.select_all()
+    return render_template("products/index.html", heading="Inventory", all_products=all_products, all_vendors=all_vendors)
 
 # action: new
 # display new product page
@@ -40,7 +41,7 @@ def add_product():
 def edit_product(id):
     product = product_repository.select_by_id(id)
     all_vendors = vendor_repository.select_all()
-    return render_template("products/edit.html", product=product, all_vendors=all_vendors)
+    return render_template("products/edit.html", heading="Edit Product", product=product, all_vendors=all_vendors)
 
 # action: update
 # update the product on the databse
@@ -55,3 +56,7 @@ def update_product(id):
     product = Product(name, description, stock_quantity, buying_cost, selling_price, vendor, id)
     product_repository.update(product)
     return redirect("/products")
+
+# action: show
+# show an individual product
+

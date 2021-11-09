@@ -4,13 +4,13 @@
 Vendors List
 <div>
     <table class="vendors-table">
-        <tr>
+        <tr class="vendor-tr">
             <th class="vendors-th">Name</th>
             <th class="vendors-th">Active</th>
         </tr>
         {%for vendor in all_vendors%}
-        <tr>
-            <td class="vendors-td"><a href="/vendors/{{vendor.id}}/edit">{{vendor.name}}</a></td>
+        <tr class="vendors-tr">
+            <td class="vendors-td"><a href="/vendors/{{vendor.id}}/edit" class="vendors-link">{{vendor.name}}</a></td>
             <td class="vendors-td">{{vendor.active}}</td>
         </tr>
         {%endfor%}

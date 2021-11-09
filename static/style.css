@@ -4,11 +4,26 @@
 }
 
 .inventory-th {
-    border: 1px solid black;
+    border: 2px solid black;
+    padding: 1%;
+    font-size: 110%;
 }
 
 .inventory-td {
     border: 1px solid black;
+    padding: 1%;
+}
+
+.inventory-tr:nth-child(even) {
+    background-color: #b2b2b2;
+}
+
+.inventory-link {
+    text-decoration: none;
+}
+
+.inventory-select-vendor-select {
+    width: 6%;
 }
 
 .vendors-table {
@@ -17,9 +32,20 @@
 }
 
 .vendors-th {
-    border: 1px solid black;
+    border: 2px solid black;
+    padding: 1%;
+    font-size: 110%;
 }
 
 .vendors-td {
     border: 1px solid black;
+    padding: 1%;
+}
+
+.vendors-tr:nth-child(even) {
+    background-color: #b2b2b2;
+}
+
+.vendors-link {
+    text-decoration: none;
 }

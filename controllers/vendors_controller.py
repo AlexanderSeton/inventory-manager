@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, Blueprint
 from models.vendor import Vendor
 from repositories import vendor_repository
+from repositories import product_repository
 
 # vendors blueprint
 vendors_blueprint = Blueprint("vendors", __name__)
@@ -37,7 +38,7 @@ def add_vendor():
 def edit_vendor(id):
     vendor = vendor_repository.select_by_id(id)
     print("VENDOR FROM SELCT CONTROLLER: ", vendor.__dict__)
-    return render_template("vendors/edit.html", vendor=vendor)
+    return render_template("vendors/edit.html", heading="Edit Vendor", vendor=vendor)
 
 # action: update
 # update the product on the databse
@@ -51,3 +52,11 @@ def update_vendor(id):
     vendor = Vendor(name, active, id)
     vendor_repository.update(vendor)
     return redirect("/vendors")
+
+# action: show
+# show an individual vendor
+@vendors_blueprint.route("/vendors/<id>", methods=["GET"])
+def show_vendor(id):
+    vendor = vendor_repository.select_by_id(id)
+    vendor_products = product_repository.select_all_by_vendor_id(vendor.id)
+    return render_template("vendors/show.html", heading="Show Vendor & Products", vendor=vendor, vendor_products=vendor_products)
