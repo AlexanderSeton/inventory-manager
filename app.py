@@ -1,8 +1,11 @@
+from re import X
 from flask import Flask, render_template
+from numpy.core.fromnumeric import prod
 from controllers.products_controller import products_blueprint
 from controllers.vendors_controller import vendors_blueprint
 from repositories import product_repository
 from repositories import vendor_repository
+from models.product import Product
 from matplotlib import pyplot as plt
 import io
 import base64
@@ -33,20 +36,32 @@ def home():
 
 @app.route("/visualize")
 def visualize():
+    # get 3 most profitable products
+    all_products = product_repository.select_all()
+    most_profitable_products = []
+    for i in range(3):
+        most_prof = all_products[0]
+        for product in all_products:
+            product_profit = product.calculate_profit()
+            if product_profit > most_prof.calculate_profit() and product not in most_profitable_products:
+                most_prof = product
+        most_profitable_products.append(most_prof)
+    
+    # creating the pie chart
     plt.switch_backend("Agg")
-    # charts
-    # p1
-    fig,ax=plt.subplots(figsize=(6,6))
-    ax=seaborn.set_style(style="darkgrid")
-    x = [i for i in range(100)]
-    y = [i for i in range(100)]
-    # p2
-    seaborn.lineplot(x,y)
+    fig, ax=plt.subplots(figsize=(3, 3))
+    data = [(most_profitable_products[0].selling_price - most_profitable_products[0].buying_cost), most_profitable_products[0].buying_cost]
+    labels = ["Profit", "Cost"]
+    colors = seaborn.color_palette("Blues")
+    plt.pie(x=data, labels=labels, colors=colors, autopct="%.0f%%")
+    ax.set_title(f"{most_profitable_products[0].name}")
     canvas = FigureCanvas(fig)
     img = io.BytesIO()
     fig.savefig(img)
     img.seek(0)
-    return send_file(img, mimetype='img/png')
+    return send_file(img, mimetype="img/png")
+
+
 
 
 

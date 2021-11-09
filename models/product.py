@@ -7,3 +7,7 @@ class Product:
         self.selling_price = selling_price
         self.vendor = vendor
         self.id = id
+
+    def calculate_profit(self):
+        profit = (((self.selling_price - self.buying_cost) / self.selling_price) * 100)
+        return profit
