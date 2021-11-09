@@ -32,7 +32,9 @@
     <label for="vendor_id">Vendor:</label>
     <select id="vendor_id" name="vendor_id">
       {%for vendor in all_vendors%}
-        <option value="{{vendor.id}}">{{vendor.name}}</option>
+        {%if vendor.active == True%}
+          <option value="{{vendor.id}}">{{vendor.name}}</option>
+        {%endif%}
       {%endfor%}
     </select>
   </div>
