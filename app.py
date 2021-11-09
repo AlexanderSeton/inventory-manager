@@ -10,6 +10,7 @@ from matplotlib import pyplot as plt
 import io
 import base64
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
+import matplotlib
 import seaborn
 from flask import send_file
 from flask.helpers import url_for
@@ -34,30 +35,47 @@ def home():
         total_stock_value += product.selling_price * product.stock_quantity
     return render_template("index.html", heading="Dashboard", number_product_types=number_product_types, number_all_units=number_all_units, number_vendors=number_vendors, total_stock_value=total_stock_value)
 
-@app.route("/visualize/<rank>")
-def visualize(rank):
+@app.route("/piechart/<rank>")
+def piechart(rank):
+    matplotlib.rc_file_defaults()
     rank = int(rank)
     # get 3 most profitable products
     all_products = product_repository.select_all()
-    most_profitable_products = []
-    for i in range(3):
-        most_prof = all_products[0]
-        for product in all_products:
-            product_profit = product.calculate_profit()
-            if product_profit > most_prof.calculate_profit() and product not in most_profitable_products:
-                most_prof = product
-        most_profitable_products.append(most_prof)
-    # get specific product from rank argument
-    product = most_profitable_products[rank]
-    print("\nPRODUCT SELECTED: ", product.__dict__)
+    most_profitable_product = all_products[0]
+    for product in all_products:
+        temp_profit = product.calculate_profit()
+        if temp_profit > most_profitable_product.calculate_profit():
+            most_profitable_product = product
+    product = most_profitable_product
     # creating the pie chart
     plt.switch_backend("Agg")
-    fig, ax=plt.subplots(figsize=(3, 3))
+    fig, ax = plt.subplots(figsize=(3, 3))
     data = [(product.selling_price - product.buying_cost), product.buying_cost]
-    labels = ["Profit", "Cost"]
+    labels = [f"Profit: £{(product.selling_price - product.buying_cost)}", f"Cost: £{product.buying_cost}"]
     colors = seaborn.color_palette("Blues")
     plt.pie(x=data, labels=labels, colors=colors, autopct="%.0f%%")
     ax.set_title(f"Product: {product.name}")
+    canvas = FigureCanvas(fig)
+    img = io.BytesIO()
+    fig.savefig(img)
+    img.seek(0)
+    return send_file(img, mimetype="img/png")
+
+@app.route("/barchart")
+def barchart():
+    # get three products with the lowest stock levels
+    all_products = product_repository.select_all()
+    print("\n\n\ALL LOWEST STOCK ITEMS: ", all_products)
+    lowest_stock_three = []
+    lowest_stock_three = all_products[0].get_three_lowest_stock(all_products)
+    print("\n\n\nTHREE LOWEST STOCK ITEMS: ", lowest_stock_three)
+    # create bar chart
+    # plt.switch_backend("Agg")
+    fig, ax = plt.subplots(figsize=(6, 3))
+    x = [product.name for product in lowest_stock_three]
+    y = [product.stock_quantity for product in lowest_stock_three]
+    plt.bar(x, y)
+    ax.set_title(f"Lowest Stock Products")
     canvas = FigureCanvas(fig)
     img = io.BytesIO()
     fig.savefig(img)

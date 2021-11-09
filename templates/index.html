@@ -17,17 +17,22 @@
 </div>
 
 <div class="dashboard-best-markup-charts">
-    <h3>Current Top 3 Most Profitable Products</h3>
+    <div>
+        <h3>Most Profitable Product</h3>
+    </div>
     <div>
         <div>
-            <img src="{{url_for('visualize', rank=0)}}">
+            <img src="{{url_for('piechart', rank=0)}}" alt="Most Profitable Product">
         </div>
-        <div>
-            <img src="{{url_for('visualize', rank=1)}}">
-        </div>
-        <div>
-            <img src="{{url_for('visualize', rank=2)}}">
-        </div>
+    </div>
+</div>
+<br><br><br>
+<div class="dashboard-low-stock">
+    <div>
+        <h3>Lowest Stock Products</h3>
+    </div>
+    <div>
+        <img src="{{url_for('barchart')}}" alt="Lowest Stock Products">
     </div>
 </div>
 
