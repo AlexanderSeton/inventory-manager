@@ -10,6 +10,7 @@ Products List
             <th class="inventory-th">Stock Quantity</th>
             <th class="inventory-th">Buying Cost /unit (£)</th>
             <th class="inventory-th">Selling Price /unit (£)</th>
+            <th class="inventory-th">Markup (%)</th>
             <th class="inventory-th">Vendor Name</th>
         </tr>
         {%for product in all_products%}
@@ -23,6 +24,7 @@ Products List
             {{product.stock_quantity}}</td>
             <td class="inventory-td">{{product.buying_cost}}</td>
             <td class="inventory-td">{{product.selling_price}}</td>
+            <td class="inventory-td">{{"{:.2f}".format(((product.selling_price-product.buying_cost)/product.buying_cost)*100)}}</td>
             <td class="inventory-td">{{product.vendor.name}}</td>
         </tr>
         {%endfor%}
