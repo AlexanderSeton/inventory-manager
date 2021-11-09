@@ -34,8 +34,9 @@ def home():
         total_stock_value += product.selling_price * product.stock_quantity
     return render_template("index.html", heading="Dashboard", number_product_types=number_product_types, number_all_units=number_all_units, number_vendors=number_vendors, total_stock_value=total_stock_value)
 
-@app.route("/visualize")
-def visualize():
+@app.route("/visualize/<rank>")
+def visualize(rank):
+    rank = int(rank)
     # get 3 most profitable products
     all_products = product_repository.select_all()
     most_profitable_products = []
@@ -46,24 +47,22 @@ def visualize():
             if product_profit > most_prof.calculate_profit() and product not in most_profitable_products:
                 most_prof = product
         most_profitable_products.append(most_prof)
-    
+    # get specific product from rank argument
+    product = most_profitable_products[rank]
+    print("\nPRODUCT SELECTED: ", product.__dict__)
     # creating the pie chart
     plt.switch_backend("Agg")
     fig, ax=plt.subplots(figsize=(3, 3))
-    data = [(most_profitable_products[0].selling_price - most_profitable_products[0].buying_cost), most_profitable_products[0].buying_cost]
+    data = [(product.selling_price - product.buying_cost), product.buying_cost]
     labels = ["Profit", "Cost"]
     colors = seaborn.color_palette("Blues")
     plt.pie(x=data, labels=labels, colors=colors, autopct="%.0f%%")
-    ax.set_title(f"{most_profitable_products[0].name}")
+    ax.set_title(f"Product: {product.name}")
     canvas = FigureCanvas(fig)
     img = io.BytesIO()
     fig.savefig(img)
     img.seek(0)
     return send_file(img, mimetype="img/png")
-
-
-
-
 
 if __name__ == "__main__":
     app.run(debug=True)

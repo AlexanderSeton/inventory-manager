@@ -18,8 +18,17 @@
 
 <div class="dashboard-best-markup-charts">
     <h3>Current Top 3 Most Profitable Products</h3>
-    <img src="{{url_for('visualize')}}">
+    <div>
+        <div>
+            <img src="{{url_for('visualize', rank=0)}}">
+        </div>
+        <div>
+            <img src="{{url_for('visualize', rank=1)}}">
+        </div>
+        <div>
+            <img src="{{url_for('visualize', rank=2)}}">
+        </div>
+    </div>
 </div>
-
 
 {%endblock%}
