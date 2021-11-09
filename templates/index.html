@@ -1,6 +1,22 @@
 {%extends "base.html"%}
 {%block content%}
 
-Dashboard Page
+<div class="dashboard-important-figures">
+    <div>
+        <h3>Number of products type: <br>{{number_product_types}}</h3>
+    </div>
+    <div>
+        <h3>Total number of all products: <br>{{number_all_products}}</h3>
+    </div>
+    <div>
+        <h3>Number of vendors: <br>{{number_vendors}}</h3>
+    </div>
+    <div>
+        <h3>Total stock value: <br>£{{total_stock_value}}</h3>
+    </div>
+</div>
+
+{# Chart
+<img src="{{image}}"> #}
 
 {%endblock%}
