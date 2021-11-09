@@ -54,9 +54,16 @@ def update_vendor(id):
     return redirect("/vendors")
 
 # action: show
-# show an individual vendor
+# show an individual vendor (and all its products)
 @vendors_blueprint.route("/vendors/<id>", methods=["GET"])
 def show_vendor(id):
     vendor = vendor_repository.select_by_id(id)
     vendor_products = product_repository.select_all_by_vendor_id(vendor.id)
     return render_template("vendors/show.html", heading="Show Vendor & Products", vendor=vendor, vendor_products=vendor_products)
+
+# action: delete
+# delete a vendor
+@vendors_blueprint.route("/vendors/<id>/delete", methods=["POST"])
+def delete_vendor(id):
+    vendor_repository.delete_by_id(id)
+    return redirect("/vendors")

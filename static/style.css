@@ -7,6 +7,7 @@
     border: 2px solid black;
     padding: 1%;
     font-size: 110%;
+    width: 10%;
 }
 
 .inventory-td {
@@ -24,6 +25,18 @@
 
 .inventory-select-vendor-select {
     width: 13%;
+}
+
+.inventory-delete-column {
+    width: 500%;
+}
+
+.trash-button {
+    height: 50%;
+    width: 50%;
+    background-color: transparent;
+    border: none;
+    align-items: center;
 }
 
 .vendors-table {
