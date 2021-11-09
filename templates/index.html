@@ -1,12 +1,12 @@
 {%extends "base.html"%}
 {%block content%}
 
-<div class="dashboard-important-figures">
+<div class="dashboard-overview-figures">
     <div>
         <h3>Number of products type: <br>{{number_product_types}}</h3>
     </div>
     <div>
-        <h3>Total number of all products: <br>{{number_all_products}}</h3>
+        <h3>Total number of all units: <br>{{number_all_units}}</h3>
     </div>
     <div>
         <h3>Number of vendors: <br>{{number_vendors}}</h3>
@@ -16,7 +16,10 @@
     </div>
 </div>
 
-{# Chart
-<img src="{{image}}"> #}
+<div class="dashboard-best-markup-charts">
+    <h3>Chart</h3>
+    <img src="{{url_for('visualize')}}">
+</div>
+
 
 {%endblock%}
