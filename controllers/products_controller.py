@@ -1,7 +1,11 @@
-from flask import Flask, render_template, request, redirect, Blueprint
+import re
+from flask import Flask, render_template, request, redirect, Blueprint, jsonify
+from werkzeug.wrappers import response
 from models.product import Product
 from repositories import product_repository
 from repositories import vendor_repository
+import requests
+import json
 
 # products blueprint
 products_blueprint = Blueprint("products", __name__)
@@ -67,6 +71,10 @@ def delete_product(id):
     product_repository.delete_by_id(id)
     return redirect("/products")
 
+
+
+# object detection routes
+
 # action: new (from image)
 # display input image of product page
 @products_blueprint.route("/products/new/upload-image", methods=["POST"])
@@ -75,7 +83,6 @@ def new_product_image():
 
 # action: new (with smart data suggestions)
 # display new product form with the additional smart data
-@products_blueprint.route("/products/new/smart-add", methods=["POST"])
-def process_image():
-    image = request.files["images"]
-    return render_template("products/smart_new.html", heading="Add Product", image=image)
+@products_blueprint.route("/products/new/<type>", methods=["GET"])
+def process_image(type):
+    return render_template("products/smart_new.html", heading="Add Product", type=type)
