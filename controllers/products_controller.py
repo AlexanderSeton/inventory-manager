@@ -66,3 +66,16 @@ def update_product(id):
 def delete_product(id):
     product_repository.delete_by_id(id)
     return redirect("/products")
+
+# action: new (from image)
+# display input image of product page
+@products_blueprint.route("/products/new/upload-image", methods=["POST"])
+def new_product_image():
+    return render_template("products/upload.html", heading="Upload Product Image")
+
+# action: new (with smart data suggestions)
+# display new product form with the additional smart data
+@products_blueprint.route("/products/new/smart-add", methods=["POST"])
+def process_image():
+    image = request.files["images"]
+    return render_template("products/smart_new.html", heading="Add Product", image=image)
