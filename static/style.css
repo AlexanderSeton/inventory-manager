@@ -281,23 +281,56 @@
 
 /* vendors/index.html */
 .vendors-table {
-    border: 1px solid black;
-    width: 55%;
+    border: 3px solid black;
+    width: 95%;
+    margin-top: 3%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5%;
+    /* background-color: white; */
+    align-self: center;
+    align-items: center;
+    font-size: 115%;
+}
+
+.vendors-table-div {
+    align-self: center;
 }
 
 .vendors-th {
     border: 2px solid black;
     padding: 1%;
-    font-size: 110%;
+    font-size: 130%;
+    width: 10%;
+    padding: 2.25%;
+    font-weight: bolder;
+    background-color: white;
 }
 
 .vendors-td {
     border: 1px solid black;
     padding: 1%;
+    /* background-color: white; */
 }
 
-.vendors-tr:nth-child(even) {
-    background-color: #b2b2b2;
+.vendors-tr:nth-child(even) > td {
+    background-color: gainsboro;
+}
+
+.vendors-tr:nth-child(odd) > td {
+    background-color: white;
+}
+
+.vendors-tr:nth-child(even) > td > form > .trash-button {
+    background-color: gainsboro;
+}
+
+.vendors-tr:nth-child(odd) > td > .vendors-link {
+    background-color: white;
+}
+
+.vendors-tr:nth-child(odd) > td > .vendors-delete-form {
+    background-color: white;
 }
 
 .vendors-link {

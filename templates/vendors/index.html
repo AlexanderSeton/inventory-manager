@@ -2,9 +2,9 @@
 {%block content%}
 
 Vendors List
-<div>
+<div class="vendors-table-div">
     <table class="vendors-table">
-        <tr class="vendor-tr">
+        <tr class="vendors-tr">
             <th class="vendors-th" class="vendors-delete-column">Delete</th>
             <th class="vendors-th">Name<br>(click to edit)</th>
             <th class="vendors-th">Active</th>
@@ -13,7 +13,7 @@ Vendors List
         <tr class="vendors-tr">
             <td class="vendors-td">
                 <form class="vendors-delete-form" action="/vendors/{{vendor.id}}/delete" method="POST">
-                    <button class="trash-button"><img src="static/icons/delete.png" height="25" width="25"></button>
+                    <button class="trash-button"><img src="static/icons/delete.png" height="40" width="40" style="background-color: #ff704d;"></button>
                 </form>
             </td>
             <td class="vendors-td"><a href="/vendors/{{vendor.id}}/edit" class="vendors-link">{{vendor.name}}</a></td>
