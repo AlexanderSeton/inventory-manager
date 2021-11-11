@@ -70,66 +70,84 @@
 
 /* content block */
 .content-block {
-    padding-top: 10%;
+    padding-top: 7%;
     padding-left: 1.5%;
     padding-right: 1.5%;
+    background-color: gainsboro;
 }
 
 
 /* index.html */
 .index-overview-figures {
-    border: 1px black solid;
+    /* border: 1px black solid; */
     padding: 1%;
     margin-top: 2.5%;
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-evenly;
-    font-size: 125%;
+    justify-content: space-between;
+    font-size: 140%;
     text-align: center;
 }
 
 .index-number-product-types {
+    background-color: white;
+    border: 1px black solid;
+    padding: 2%;
 }
 
-.index-total-units {   
+.index-total-units {  
+    background-color: white;
+    border: 1px black solid; 
+    padding: 2%;
 }
 
 .index-number-vendors {
+    background-color: white;
+    border: 1px black solid;
+    padding: 2%;
 }
 
 .index-total-stock {
+    background-color: white;
+    border: 1px black solid;
+    padding: 3%;
 }
 
 .index-charts {
+    /* border: 1px black solid; */
     padding: 1%;
     margin-top: 3%;
     padding-bottom: 5%;
-    border: 1px black solid;
     display: flex;
     flex-flow: row nowrap;
     font-size: 125%;
     text-align: center;
     justify-content: space-evenly;
+    align-items: center;
 }
 
 .index-best-markup-chart {
     border: 1px black solid;
+    background-color: white;
     padding: 2%;
     width: 50%;
+    margin-right: 2%;
 }
 
 #index-best-markup-chart-image {
-    border: 1px black solid;
-    
+    /* border: 1px black solid; */
+    width: 75%;
 }
 
 .index-low-stock-chart {
     border: 1px black solid;
-    padding: 2%;
+    background-color: white;
+    padding: 1.55%;
+    margin-left: 2%;
 }
 
 #index-lowest-stock-chart-image {
-    border: 1px black solid;
+    /* border: 1px black solid; */
 }
 
 
