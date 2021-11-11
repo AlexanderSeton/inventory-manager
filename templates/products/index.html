@@ -2,7 +2,7 @@
 {%block content%}
 
 Products List
-<div>
+<div class="inventory-table-div">
     <table class="inventory-table">
         <tr class="inventory-tr">
             <th class="inventory-th" class="inventory-delete-column">Delete</th>
@@ -20,14 +20,13 @@ Products List
                     <option value="/vendors/{{vendor.id}}">{{vendor.name}}</a></option>
                 {%endfor%}
             </select>    
-            
             </th>
         </tr>
         {%for product in all_products%}
         <tr class="inventory-tr">
             <td class="inventory-td">
                 <form class="inventory-delete-form" action="/products/{{product.id}}/delete" method="POST">
-                    <button class="trash-button"><img src="static/icons/delete.png" height="25" width="25"></button>
+                    <button class="trash-button"><img src="static/icons/delete.png" height="40" width="40" style="background-color: #ff704d;"></button>
                 </form>
             </td>
             <td class="inventory-td"><a href="/products/{{product.id}}/edit" class="inventory-link">{{product.name}}</a></td>

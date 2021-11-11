@@ -182,44 +182,96 @@
 
 /* products/index.html */
 .inventory-table {
-    border: 1px solid black;
-    width: 100%;
+    border: 3px solid black;
+    width: 95%;
+    margin-top: 3%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5%;
+    /* background-color: white; */
+    align-self: center;
+    align-items: center;
+    font-size: 115%;
+}
+
+.inventory-table-div {
+    align-self: center;
 }
 
 .inventory-th {
     border: 2px solid black;
     padding: 1%;
-    font-size: 110%;
+    font-size: 130%;
     width: 10%;
+    padding: 2.25%;
+    font-weight: bolder;
+    background-color: white;
 }
 
 .inventory-td {
     border: 1px solid black;
     padding: 1%;
+    /* background-color: white; */
 }
 
-.inventory-tr:nth-child(even) {
-    background-color: #b2b2b2;
+.inventory-tr {
+    /* background-color: lightblue; */
+    border: 1px solid black;
+}
+
+.inventory-tr:nth-child(odd) > td {
+    background-color: white;
+}
+
+.inventory-tr:nth-child(even) > td {
+    background-color: gainsboro;
+}
+
+.inventory-tr:nth-child(even) > td > form {
+    background-color: gainsboro;
+}
+
+.inventory-tr:nth-child(even) > td > form > .trash-button {
+    background-color: gainsboro;
 }
 
 .inventory-link {
     text-decoration: none;
+    background-color: white;
 }
 
 .inventory-select-vendor-select {
     width: 13%;
 }
 
+.inventory-delete-form {
+    background-color: gainsboro;
+}
+
+.inventory-delete-form {
+    background-color: white;
+}
+
 .inventory-delete-column {
-    width: 500%;
+    background-color: white;
 }
 
 .trash-button {
-    height: 50%;
-    width: 50%;
-    background-color: transparent;
+    background-color: white;
+}
+
+.trash-button {
+    height: 60%;
+    width: 60%;
+    /* color: red; */
+    /* background-color: transparent; */
     border: none;
     align-items: center;
+    background-color: white;
+}
+
+.inventory-select-vendor-select {
+    width: 20%;
 }
 
 
