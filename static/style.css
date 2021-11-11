@@ -554,3 +554,22 @@
     vertical-align: middle;
 }
 
+
+
+/* products/smart_new.html */
+.product-smart-add-page {
+    margin-top: 3%;
+    font-size: 155%;
+    /* border: 1px black solid; */
+    padding: 2%;
+    padding-bottom: 2%;
+    text-align: right;
+    width: 50%;
+    margin-left: 15%;
+}
+
+.product-type-smart-add {
+    margin: 2%;
+    margin-right: 15%;
+    padding-bottom: 2%;
+}

@@ -3,38 +3,38 @@
 
 <div class="product-smart-add-page">
 
-  <div>
+  <div class="product-type-smart-add">
       <h4>Product type: {{type}}</h4>
   </div>
 
   <form action="/products" method="post">
 
-    <div>
+    <div class="products-name">
       <label for="name">Name:</label>
       <input type="text" id="name" name="name" value={{type|capitalize}} required autofocus>
     </div>
 
-    <div>
+    <div class="products-description">
       <label for="description">Description:</label>
       <textarea type="text" id="description" name="description" placeholder="Description" required rows=4 cols=20>{{type|capitalize}}</textarea>
     </div>
 
-    <div>
+    <div class="products-stock-quantity">
       <label for="stock_quantity">Stock Quantity:</label>
       <input type="number" id="stock_quantity" name="stock_quantity" placeholder="Stock Quantity" required>
     </div>
 
-    <div>
+    <div class="products-buying-cost">
       <label for="buying_cost">Buying Cost /unit (£):</label>
       <input type="number" id="buying_cost" name="buying_cost" placeholder="Buying Cost" step="any" required>
     </div>
 
-    <div>
+    <div class="products-selling-price">
       <label for="selling_price">Selling Price /unit (£):</label>
       <input type="number" id="selling_price" name="selling_price" placeholder="Selling Price" step="any" required>
     </div>
 
-    <div>
+    <div class="products-vendor-id">
       <label for="vendor_id">Vendor:</label>
       <select id="vendor_id" name="vendor_id">
         {%for vendor in all_vendors%}
@@ -45,19 +45,11 @@
       </select>
     </div>
 
-      <div>
-        <button type="submit">Add Product</button>
+      <div class="products-submit">
+        <button type="submit" id="products-new-submit">Add Product</button>
       </div>
 
   </form>
-
-  <br><br><br>
-
-  <div>
-    <form action="/products/new/upload-image" method="post">
-      <button type="submit">Smart Search</button>
-    </form>
-  </div>
 
 </div>
 
