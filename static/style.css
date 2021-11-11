@@ -54,7 +54,6 @@
     font-size: 115%;
     text-align: center;
     align-self: center;
-    /* margin-left: 5%; */
     margin-right: 7.5%;
 }
 
@@ -72,7 +71,13 @@
 /* content block */
 .content-block {
     padding-top: 10%;
+    padding-left: 1.5%;
+    padding-right: 1.5%;
 }
+
+
+/* index.html */
+
 
 
 /* products/index.html */
