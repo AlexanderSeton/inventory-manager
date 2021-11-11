@@ -77,7 +77,59 @@
 
 
 /* index.html */
+.index-overview-figures {
+    border: 1px black solid;
+    padding: 1%;
+    margin-top: 2.5%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    font-size: 125%;
+    text-align: center;
+}
 
+.index-number-product-types {
+}
+
+.index-total-units {   
+}
+
+.index-number-vendors {
+}
+
+.index-total-stock {
+}
+
+.index-charts {
+    padding: 1%;
+    margin-top: 3%;
+    padding-bottom: 5%;
+    border: 1px black solid;
+    display: flex;
+    flex-flow: row nowrap;
+    font-size: 125%;
+    text-align: center;
+    justify-content: space-evenly;
+}
+
+.index-best-markup-chart {
+    border: 1px black solid;
+    padding: 2%;
+    width: 50%;
+}
+
+#index-best-markup-chart-image {
+    border: 1px black solid;
+}
+
+.index-low-stock-chart {
+    border: 1px black solid;
+    padding: 2%;
+}
+
+#index-lowest-stock-chart-image {
+    border: 1px black solid;
+}
 
 
 /* products/index.html */

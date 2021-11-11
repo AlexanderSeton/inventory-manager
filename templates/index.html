@@ -1,38 +1,42 @@
 {%extends "base.html"%}
 {%block content%}
 
-<div class="dashboard-overview-figures">
-    <div>
-        <h3>Number of products type: <br>{{number_product_types}}</h3>
+<div class="index-overview-figures">
+    <div class="index-number-product-types">
+        <h3>Product types: <br><br>{{number_product_types}}</h3>
     </div>
-    <div>
-        <h3>Total number of all units: <br>{{number_all_units}}</h3>
+    <div class="index-total-units">
+        <h3>Total number units: <br><br>{{number_all_units}}</h3>
     </div>
-    <div>
-        <h3>Number of vendors: <br>{{number_vendors}}</h3>
+    <div class="index-number-vendors">
+        <h3>Number vendors: <br><br>{{number_vendors}}</h3>
     </div>
-    <div>
-        <h3>Total stock value: <br>£{{total_stock_value}}</h3>
+    <div class="index-total-stock">
+        <h3>Stock value: <br><br>£{{total_stock_value}}</h3>
     </div>
 </div>
 
-<div class="dashboard-best-markup-charts">
-    <div>
-        <h3>Most Profitable Product</h3>
-    </div>
-    <div>
+<div class="index-charts">
+    <div class="index-best-markup-chart">
         <div>
-            <img src="{{url_for('piechart', rank=0)}}" alt="Most Profitable Product">
+            <h3>Most Profitable Product</h3>
+            <br>
+        </div>
+        <div>
+            <div>
+                <img src="{{url_for('piechart', rank=0)}}" alt="Most Profitable Product" id="index-best-markup-chart-image">
+            </div>
         </div>
     </div>
-</div>
-<br><br><br>
-<div class="dashboard-low-stock">
-    <div>
-        <h3>Lowest Stock Products</h3>
-    </div>
-    <div>
-        <img src="{{url_for('barchart')}}" alt="Lowest Stock Products">
+    <br><br><br>
+    <div class="index-low-stock-chart">
+        <div>
+            <h3>Lowest Stock Products</h3>
+            <br>
+        </div>
+        <div>
+            <img src="{{url_for('barchart')}}" alt="Lowest Stock Products" id="index-lowest-stock-chart-image">
+        </div>
     </div>
 </div>
 

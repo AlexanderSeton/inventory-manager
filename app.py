@@ -71,11 +71,11 @@ def barchart():
     print("\n\n\nTHREE LOWEST STOCK ITEMS: ", lowest_stock_three)
     # create bar chart
     # plt.switch_backend("Agg")
-    fig, ax = plt.subplots(figsize=(6, 3))
+    fig, ax = plt.subplots(figsize=(7, 3))
     x = [product.name for product in lowest_stock_three]
     y = [product.stock_quantity for product in lowest_stock_three]
     plt.bar(x, y)
-    ax.set_title(f"Lowest Stock Products")
+    ax.set_title(f"3 Lowest Stock Products")
     canvas = FigureCanvas(fig)
     img = io.BytesIO()
     fig.savefig(img)
