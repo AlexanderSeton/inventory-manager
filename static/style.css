@@ -235,6 +235,10 @@
     background-color: gainsboro;
 }
 
+.inventory-tr:nth-child(even) > td > .inventory-link {
+    background-color: gainsboro;
+}
+
 .inventory-link {
     text-decoration: none;
     background-color: white;
