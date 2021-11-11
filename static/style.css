@@ -2,6 +2,11 @@
 * {
     margin: 0;
     padding: 0;
+    background-color: gainsboro;
+}
+
+.bg-white {
+    background-color: white;
 }
 
 /* base.html */
@@ -21,15 +26,18 @@
     padding-right: 5%;
     padding-left: 2%;
     align-self: center;
+    background-color: #203647;
 }
 
 .base-titles > h1 {
     padding-bottom: 3%;
     font-size: 215%;
+    background-color: #203647;
 }
 
 .base-titles > h2 {
     text-align: center;
+    background-color: #203647;
 }
 
 .base-nav {
@@ -41,12 +49,14 @@
     padding-left: 5%;
     padding-right: 5%;
     align-self: center;
+    background-color: #203647;
 }
 
 .base-nav > ul {
     display: flex;
     flex-flow: row;
     list-style: none;
+    background-color: #203647;
 }
 
 .base-nav > ul > li {
@@ -55,17 +65,20 @@
     text-align: center;
     align-self: center;
     margin-right: 7.5%;
+    background-color: #203647;
 }
 
 .base-nav-li-a {
     color: white;
     text-decoration: none;
     font-size: 125%;
+    background-color: #203647;
 }
 
 .base-nav-li-a:hover {
     background-color: lightgray;
     color: black;
+    background-color: #203647;
 }
 
 /* content block */
@@ -95,10 +108,18 @@
     padding: 2%;
 }
 
+.index-number-product-types > h3 {
+    background-color: white;
+}
+
 .index-total-units {  
     background-color: white;
     border: 1px black solid; 
     padding: 2%;
+}
+
+.index-total-units > h3 {
+    background-color: white;
 }
 
 .index-number-vendors {
@@ -107,10 +128,18 @@
     padding: 2%;
 }
 
+.index-number-vendors > h3 {
+    background-color: white;
+}
+
 .index-total-stock {
     background-color: white;
     border: 1px black solid;
     padding: 3%;
+}
+
+.index-total-stock > h3 {
+    background-color: white;
 }
 
 .index-charts {
@@ -128,10 +157,10 @@
 
 .index-best-markup-chart {
     border: 1px black solid;
-    background-color: white;
     padding: 2%;
     width: 50%;
     margin-right: 2%;
+    background-color: white;
 }
 
 #index-best-markup-chart-image {
@@ -141,9 +170,9 @@
 
 .index-low-stock-chart {
     border: 1px black solid;
-    background-color: white;
     padding: 1.55%;
     margin-left: 2%;
+    background-color: white;
 }
 
 #index-lowest-stock-chart-image {
