@@ -1,3 +1,81 @@
+/* all */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* base.html */
+/* header */
+.base-header {
+    position: fixed;
+    width: 100%;
+    background-color: #203647;
+    display: flex;
+    flex-flow: row nowrap;
+    padding: 0.5%;
+}
+
+.base-titles {
+    color: white;
+    /* border: 1px white solid; */
+    padding-right: 5%;
+    padding-left: 2%;
+    align-self: center;
+}
+
+.base-titles > h1 {
+    padding-bottom: 3%;
+    font-size: 215%;
+}
+
+.base-titles > h2 {
+    text-align: center;
+}
+
+.base-nav {
+    color: white;
+    display: flex;
+    flex-flow: row;
+    width: 60%;
+    /* border: 1px white solid; */
+    padding-left: 5%;
+    padding-right: 5%;
+    align-self: center;
+}
+
+.base-nav > ul {
+    display: flex;
+    flex-flow: row;
+    list-style: none;
+}
+
+.base-nav > ul > li {
+    padding: 5%;
+    font-size: 115%;
+    text-align: center;
+    align-self: center;
+    /* margin-left: 5%; */
+    margin-right: 7.5%;
+}
+
+.base-nav-li-a {
+    color: white;
+    text-decoration: none;
+    font-size: 125%;
+}
+
+.base-nav-li-a:hover {
+    background-color: lightgray;
+    color: black;
+}
+
+/* content block */
+.content-block {
+    padding-top: 10%;
+}
+
+
+/* products/index.html */
 .inventory-table {
     border: 1px solid black;
     width: 100%;
@@ -39,6 +117,8 @@
     align-items: center;
 }
 
+
+/* vendors/index.html */
 .vendors-table {
     border: 1px solid black;
     width: 55%;

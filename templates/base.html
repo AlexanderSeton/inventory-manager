@@ -5,20 +5,22 @@
   <title>{{heading}} - Inventory Manager</title>
 </head>
 <body>
-  <header>
-    <h1>Inventory Manager</h1>
-    <h2>{{heading}}</h2>
-    <nav>
+  <header class="base-header">
+    <div class="base-titles">
+      <h1>Inventory Manager</h1>
+      <h2>{{heading}}</h2>
+    </div>
+    <nav class="base-nav">
       <ul>
-        <li><a href="/">Dashboard</a></li>
-        <li><a href="/products">Inventory</a></li>
-        <li><a href="/vendors">Vendors</a></li>
-        <li><a href="/products/new">Add Product</a></li>
-        <li><a href="/vendors/new">Add Vendor</a></li>
+        <li><a href="/" class="base-nav-li-a">Dashboard</a></li>
+        <li><a href="/products" class="base-nav-li-a">Inventory</a></li>
+        <li><a href="/vendors" class="base-nav-li-a">Vendors</a></li>
+        <li><a href="/products/new" class="base-nav-li-a">Add Product</a></li>
+        <li><a href="/vendors/new" class="base-nav-li-a">Add Vendor</a></li>
       </ul>
     </nav>
   </header>
-  <div>
+  <div class="content-block">
     {%block content%}
     {%endblock%}
   </div>
