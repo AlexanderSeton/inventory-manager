@@ -85,4 +85,5 @@ def new_product_image():
 # display new product form with the additional smart data
 @products_blueprint.route("/products/new/<type>", methods=["GET"])
 def process_image(type):
-    return render_template("products/smart_new.html", heading="Add Product", type=type)
+    all_vendors = vendor_repository.select_all()
+    return render_template("products/smart_new.html", heading="Add Product", all_vendors=all_vendors, type=type)
