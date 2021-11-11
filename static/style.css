@@ -336,3 +336,188 @@
 .vendors-link {
     text-decoration: none;
 }
+
+
+
+/* /products/new.html */
+.products-new-form {
+    margin-top: 5%;
+    /* border: 3px black solid; */
+    font-size: 155%;
+    text-align: right;
+    width: 50%;
+    padding-bottom: 2%;
+}
+
+.products-name {
+    /* border: 1px black solid; */
+    padding: 0.5%;
+}
+
+#name{
+    height: 55px;
+    width: 400px;
+    font-size: 100%;
+    background-color: white;
+    vertical-align: middle;
+    border: 1px black solid;
+    text-align: center;
+}
+
+.products-description {
+    /* border: 1px black solid; */
+    padding: 0.5%;
+}
+
+#description{
+    height: 55px;
+    width: 400px;
+    font-size: 120%;
+    background-color: white;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.products-stock-quantity {
+    /* border: 1px black solid; */
+    padding: 0.5%;
+}
+
+#stock_quantity{
+    height: 55px;
+    width: 400px;
+    font-size: 100%;
+    background-color: white;
+    vertical-align: middle;
+    border: 1px black solid;
+    text-align: center;
+}
+
+.products-buying-cost {
+    /* border: 1px black solid; */
+    padding: 0.5%;
+}
+
+#buying_cost{
+    height: 55px;
+    width: 400px;
+    font-size: 100%;
+    background-color: white;
+    vertical-align: middle;
+    border: 1px black solid;
+    text-align: center;
+}
+
+.products-selling-price {
+    /* border: 1px black solid; */
+    padding: 0.5%;
+}
+
+#selling_price{
+    height: 55px;
+    width: 400px;
+    font-size: 100%;
+    background-color: white;
+    vertical-align: middle;
+    border: 1px black solid;
+    text-align: center;
+}
+
+.products-vendor-id {
+    /* border: 1px black solid; */
+    padding: 0.5%;
+}
+
+#vendor_id{
+    height: 55px;
+    width: 400px;
+    font-size: 100%;
+    background-color: white;
+    vertical-align: middle;
+    border: 1px black solid;
+    text-align: center;
+}
+
+.products-submit {
+    /* border: 1px black solid; */
+    padding: 0.5%;
+    padding-right: 15%;
+}
+
+#products-new-submit {
+    height: 40px;
+    width: 200px;
+    font-size: 100%;
+    background-color: white;
+    vertical-align: middle;
+    border: 1px black solid;
+    text-align: center;
+}
+
+.products-smart-search {
+    /* border: 1px black solid; */
+    padding: 0.5%;
+    padding-top: 15%;
+    text-align: center;
+}
+
+#smart-search {
+    height: 40px;
+    width: 175px;
+    font-size: 100%;
+    background-color: white;
+    vertical-align: middle;
+    border: 1px black solid;
+    text-align: center;
+}
+
+.products-new-page {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+}
+
+
+
+/* vendors/new.html */
+.vendors-new-page {
+    padding: 1%;
+    margin-top: 5%;
+    /* border: 1px black solid; */
+    width: 100%;
+    font-size: 155%;
+    text-align: center;
+    padding-bottom: 2%;
+}
+
+.vendors-name {
+    padding: 1%;
+}
+
+.vendors-active {
+    padding: 1%;
+}
+
+.vendors-submit {
+    padding: 1%;
+}
+
+#active {
+    height: 25px;
+    width: 25px;
+    font-size: 100%;
+    vertical-align: middle;
+    padding: 1%;
+}
+
+#vendors-new-submit {
+    height: 40px;
+    width: 200px;
+    font-size: 100%;
+    background-color: white;
+    vertical-align: middle;
+    border: 1px black solid;
+    text-align: center;
+}
+
+

@@ -1,22 +1,26 @@
 {%extends "base.html"%}
 {%block content%}
 
-<form action="/vendors" method="post">
+<div class="vendors-new-page">
 
-  <div>
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" placeholder="Name" required autofocus>
-  </div>
+  <form action="/vendors" method="post">
 
-  <div>
-    <label for="active">Currently Active:</label>
-    <input type="checkbox" id="active" name="active" checked>
-  </div>
-
-    <div>
-        <button type="submit">Add Vendor</button>
+    <div class="vendors-name">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" placeholder="Name" required autofocus>
     </div>
 
-</form>
+    <div class="vendors-active">
+      <label for="active">Currently Active:</label>
+      <input type="checkbox" id="active" name="active" checked>
+    </div>
+
+      <div class="vendors-submit">
+          <button type="submit" id="vendors-new-submit">Add Vendor</button>
+      </div>
+
+  </form>
+
+</div>
 
 {%endblock%}
