@@ -49,7 +49,7 @@ def piechart(rank):
     product = most_profitable_product
     # creating the pie chart
     plt.switch_backend("Agg")
-    fig, ax = plt.subplots(figsize=(3, 3))
+    fig, ax = plt.subplots(figsize=(4, 3))
     data = [(product.selling_price - product.buying_cost), product.buying_cost]
     labels = [f"Profit: £{(product.selling_price - product.buying_cost)}", f"Cost: £{product.buying_cost}"]
     colors = seaborn.color_palette("Blues")
