@@ -1,16 +1,18 @@
 {%extends "base.html"%}
 {%block content%}
 
-<form action="http://localhost:5001/detections" method="post" enctype="multipart/form-data">
+<div class="products-upload-page">
+  <form action="http://localhost:5001/detections" method="post" enctype="multipart/form-data">
 
-    <div>
-      <label for="images">Upload Product Image:</label>
-      <input type="file" id="images" name="images" accept="image/*">
-    </div>
-    <div>
-      <button type="submit" value="submit">Upload</button>
-    </div>
-  
-</form>
+      <div>
+        <label for="images">Upload Product Image:</label>
+        <input type="file" id="images" name="images" accept="image/*">
+      </div>
+      <div class="smart-new-submit-class">
+        <button type="submit" value="submit" id="upload-button">Upload</button>
+      </div>
+    
+  </form>
+</div>
 
 {%endblock%}

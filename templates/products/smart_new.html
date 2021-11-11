@@ -1,60 +1,64 @@
 {%extends "base.html"%}
 {%block content%}
 
-<div>
-    <h4>Product type: {{type}}</h4>
-</div>
-
-<form action="/products" method="post">
+<div class="product-smart-add-page">
 
   <div>
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" value={{type|capitalize}} required autofocus>
+      <h4>Product type: {{type}}</h4>
   </div>
 
-  <div>
-    <label for="description">Description:</label>
-    <textarea type="text" id="description" name="description" placeholder="Description" required rows=4 cols=20>{{type|capitalize}}</textarea>
-  </div>
-
-  <div>
-    <label for="stock_quantity">Stock Quantity:</label>
-    <input type="number" id="stock_quantity" name="stock_quantity" placeholder="Stock Quantity" required>
-  </div>
-
-  <div>
-    <label for="buying_cost">Buying Cost /unit (£):</label>
-    <input type="number" id="buying_cost" name="buying_cost" placeholder="Buying Cost" step="any" required>
-  </div>
-
-  <div>
-    <label for="selling_price">Selling Price /unit (£):</label>
-    <input type="number" id="selling_price" name="selling_price" placeholder="Selling Price" step="any" required>
-  </div>
-
-  <div>
-    <label for="vendor_id">Vendor:</label>
-    <select id="vendor_id" name="vendor_id">
-      {%for vendor in all_vendors%}
-        {%if vendor.active == True%}
-          <option value="{{vendor.id}}">{{vendor.name}}</option>
-        {%endif%}
-      {%endfor%}
-    </select>
-  </div>
+  <form action="/products" method="post">
 
     <div>
-      <button type="submit">Add Product</button>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" value={{type|capitalize}} required autofocus>
     </div>
 
-</form>
+    <div>
+      <label for="description">Description:</label>
+      <textarea type="text" id="description" name="description" placeholder="Description" required rows=4 cols=20>{{type|capitalize}}</textarea>
+    </div>
 
-<br><br><br>
+    <div>
+      <label for="stock_quantity">Stock Quantity:</label>
+      <input type="number" id="stock_quantity" name="stock_quantity" placeholder="Stock Quantity" required>
+    </div>
 
-<div>
-  <form action="/products/new/upload-image" method="post">
-    <button type="submit">Smart Search</button>
+    <div>
+      <label for="buying_cost">Buying Cost /unit (£):</label>
+      <input type="number" id="buying_cost" name="buying_cost" placeholder="Buying Cost" step="any" required>
+    </div>
+
+    <div>
+      <label for="selling_price">Selling Price /unit (£):</label>
+      <input type="number" id="selling_price" name="selling_price" placeholder="Selling Price" step="any" required>
+    </div>
+
+    <div>
+      <label for="vendor_id">Vendor:</label>
+      <select id="vendor_id" name="vendor_id">
+        {%for vendor in all_vendors%}
+          {%if vendor.active == True%}
+            <option value="{{vendor.id}}">{{vendor.name}}</option>
+          {%endif%}
+        {%endfor%}
+      </select>
+    </div>
+
+      <div>
+        <button type="submit">Add Product</button>
+      </div>
+
   </form>
+
+  <br><br><br>
+
+  <div>
+    <form action="/products/new/upload-image" method="post">
+      <button type="submit">Smart Search</button>
+    </form>
+  </div>
+
 </div>
 
 {%endblock%}

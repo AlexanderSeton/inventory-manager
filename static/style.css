@@ -521,3 +521,35 @@
 }
 
 
+
+/* products/upload.html */
+.products-upload-page {
+    margin-top: 4%;
+    font-size: 160%;
+    /* border: 1px black solid; */
+    padding: 2%;
+    text-align: center;
+    align-self: center;
+    padding-left: 10%;
+}
+
+#images {
+    margin: 2%;
+    font-size: 80%;
+}
+
+.smart-new-submit-class {
+    padding-right: 15%;
+}
+
+#upload-button {
+    height: 35px;
+    width: 125px;
+    font-size: 100%;
+    background-color: white;
+    vertical-align: middle;
+    text-align: center;
+    border: 1px black solid;
+    margin: 2%;
+    vertical-align: middle;
+}
